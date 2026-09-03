@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Guía del proceso de selección en Eaton: etapas, tiempos estimados, cómo prepararte y preguntas frecuentes.">
+<meta name="theme-color" content="#004b87">
+<title>Candidate Experience Guide — Eaton</title>
+<style>
+:root{
+  --azul:#0067b8;
+  --azul-medio:#004b87;
+  --azul-profundo:#003b6f;
+  --amarillo:#ffb81c;
+  --amarillo-suave:#fff5dd;
+  --fondo:#eef3f8;
+  --superficie:#ffffff;
+  --superficie-suave:#f1f8fe;
+  --borde:#d5e4f2;
+  --texto:#16232e;
+  --texto-suave:#4a5b68;
+  --exito:#1c7a4a;
+  --radio:16px;
+  --sombra:0 3px 14px rgba(0,59,111,.08);
+  --paso:1rem;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Univers','Open Sans',Segoe UI,Arial,sans-serif;
+  background:var(--fondo);color:var(--texto);
+  font-size:var(--paso);line-height:1.68;-webkit-text-size-adjust:100%;
+}
+body.grande{--paso:1.22rem}
+a{color:var(--azul-medio)}
+:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px;border-radius:6px}
+b,strong{font-weight:700}
+.resalte{background:var(--amarillo-suave);box-shadow:0 0 0 2px var(--amarillo-suave);border-radius:3px;font-weight:700;color:#7a5200}
+
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(150deg,#0067b8 0%,#004b87 55%,#003b6f 100%);color:#fff;padding:56px 20px 44px}
+.hero-in{max-width:920px;margin:auto;text-align:center}
+.hero h1{font-size:clamp(1.75rem,5.4vw,2.7rem);line-height:1.16;font-weight:700;letter-spacing:-.015em}
+.hero p.lead{margin:14px auto 0;max-width:52ch;color:#dceaf7;font-size:1.08rem}
+.datos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.dato{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 16px;font-size:.92rem;font-weight:600}
+.dato b{color:var(--amarillo)}
+
+/* ---------- BARRA ---------- */
+.utilidades{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+.utilidades-in{max-width:920px;margin:auto;padding:10px 14px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.utilidades-in::-webkit-scrollbar{display:none}
+@media(min-width:900px){.utilidades-in{flex-wrap:wrap;overflow:visible}}
+.chip{flex:0 0 auto;border:1px solid var(--borde);background:#fff;color:var(--azul-medio);border-radius:999px;padding:8px 15px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.chip:hover{background:var(--superficie-suave)}
+.chip.accion{border-color:#bfdcf6;background:var(--superficie-suave)}
+.idioma{flex:0 0 auto;display:flex;border:1px solid #bfdcf6;border-radius:999px;overflow:hidden;background:#fff;margin-right:4px}
+.idioma button{border:none;background:#fff;color:var(--azul-medio);font:inherit;font-size:.85rem;font-weight:700;padding:8px 13px;cursor:pointer;border-right:1px solid #e4eef8}
+.idioma button:last-child{border-right:none}
+.idioma button[aria-pressed="true"]{background:var(--azul-medio);color:#fff}
+
+main{max-width:920px;margin:auto;padding:32px 16px 64px}
+
+/* ---------- BLOQUES ---------- */
+.bloque{margin-bottom:48px}
+.bloque-cab{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.bloque-cab .h-ico{font-size:1.5rem;line-height:1}
+.bloque-cab h2{font-size:1.42rem;color:var(--azul-profundo);letter-spacing:-.015em;line-height:1.25}
+.bloque p.intro{color:var(--texto-suave);max-width:62ch;margin-bottom:20px}
+
+/* ---------- MAPA ---------- */
+.mapa{display:grid;gap:12px}
+@media(min-width:760px){.mapa{grid-template-columns:repeat(4,1fr)}}
+.mapa-paso{display:flex;gap:13px;align-items:center;text-align:left;background:var(--superficie);border:1px solid var(--borde);border-left:6px solid var(--azul);border-radius:14px;padding:15px 16px;font:inherit;color:inherit;cursor:pointer;width:100%;box-shadow:var(--sombra)}
+@media(min-width:760px){.mapa-paso{flex-direction:column;align-items:flex-start;border-left:1px solid var(--borde);border-top:6px solid var(--azul)}}
+.mapa-paso:hover{background:var(--superficie-suave)}
+.mapa-num{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--azul-medio);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.05rem}
+.mapa-t{display:block;font-weight:700;font-size:.98rem;line-height:1.32}
+.mapa-d{display:block;font-size:.86rem;color:var(--texto-suave);margin-top:4px;font-weight:600}
+.mapa-paso.activo{border-color:var(--amarillo);border-left-color:var(--amarillo);background:#fffaef}
+@media(min-width:760px){.mapa-paso.activo{border-top-color:var(--amarillo)}}
+.mapa-paso.activo .mapa-num{background:var(--amarillo);color:var(--azul-profundo)}
+
+/* ---------- PERSONAS ---------- */
+.personas{display:grid;gap:16px}
+@media(min-width:640px){.personas{grid-template-columns:1fr 1fr}}
+.persona{background:var(--superficie);border:1px solid var(--borde);border-radius:var(--radio);padding:22px;box-shadow:var(--sombra)}
+.persona-cab{display:flex;gap:13px;align-items:center;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid #eaf2fa}
+.avatar{flex:0 0 auto;width:46px;height:46px;border-radius:13px;background:var(--superficie-suave);border:1px solid #cfe4f7;display:grid;place-items:center;font-size:1.4rem}
+.persona h3{font-size:1.06rem;color:var(--azul-profundo);line-height:1.25}
+.persona .rol{font-size:.85rem;color:var(--texto-suave);font-weight:600}
+.persona ul{list-style:none}
+.persona li{padding-left:20px;position:relative;font-size:.95rem;margin-bottom:8px}
+.persona li:last-child{margin-bottom:0}
+.persona li::before{content:"";position:absolute;left:2px;top:.66em;width:7px;height:7px;border-radius:50%;background:var(--azul)}
+
+/* ---------- ETAPAS ---------- */
+.etapa{background:var(--superficie);border:1px solid var(--borde);border-radius:var(--radio);padding:26px;margin-bottom:18px;box-shadow:var(--sombra)}
+.etapa.marcada{box-shadow:0 0 0 3px var(--amarillo),var(--sombra)}
+.etapa-cab{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center;margin-bottom:18px;padding-bottom:16px;border-bottom:2px solid #eaf2fa}
+.etapa-num{width:44px;height:44px;border-radius:50%;background:var(--azul-profundo);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.15rem;flex:0 0 auto}
+.etapa h3{font-size:1.24rem;color:var(--azul-profundo);flex:1 1 220px;line-height:1.28}
+.tiempo{background:var(--superficie-suave);color:var(--azul-medio);border:1px solid #bfdcf6;border-radius:999px;padding:7px 15px;font-size:.86rem;font-weight:700;white-space:nowrap}
+.etapa h4{font-size:1.05rem;color:var(--azul-medio);margin:28px 0 12px;display:flex;align-items:center;gap:9px}
+.etapa h4 .ico{font-size:1.15rem}
+.etapa p,.etapa li{max-width:70ch}
+.etapa ul{list-style:none;margin:12px 0}
+.etapa ul li{padding-left:22px;position:relative;margin-bottom:9px}
+.etapa ul li::before{content:"";position:absolute;left:2px;top:.66em;width:8px;height:8px;border-radius:50%;background:var(--azul)}
+.nota{font-size:.9rem;color:var(--texto-suave);background:#f7fafd;border-left:4px solid var(--borde);padding:12px 16px;border-radius:0 10px 10px 0;margin-top:20px}
+.aviso{background:var(--amarillo-suave);border:1px solid #f0d79b;border-left:6px solid var(--amarillo);border-radius:0 12px 12px 0;padding:16px 18px;margin:22px 0;font-size:.97rem}
+.aviso .t{display:flex;align-items:center;gap:9px;font-weight:700;color:#7a5200;margin-bottom:6px;font-size:1rem}
+
+/* ---------- DUO ---------- */
+.duo{display:grid;gap:16px;margin-top:14px}
+@media(min-width:620px){.duo{grid-template-columns:1fr 1fr}}
+.caja{background:var(--superficie-suave);border:1px solid #cfe4f7;border-radius:14px;padding:18px 20px}
+.caja h5{font-size:1.02rem;color:var(--azul-profundo);margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.caja h5 .ico{font-size:1.25rem}
+.caja ul{margin:8px 0 0}
+
+/* ---------- STAR ---------- */
+.star{display:grid;gap:12px;margin-top:16px}
+@media(min-width:620px){.star{grid-template-columns:repeat(4,1fr)}}
+.star-item{border:1px solid var(--borde);border-radius:14px;padding:16px;background:#fff;text-align:center}
+.star-l{width:44px;height:44px;border-radius:12px;background:var(--azul-profundo);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.35rem;margin:0 auto 10px}
+.star-item b{display:block;font-size:1rem;color:var(--azul-profundo);margin-bottom:2px}
+.star-item span{font-size:.9rem;color:var(--texto-suave);line-height:1.5}
+
+/* ---------- CHECKLIST ---------- */
+.check{margin-top:20px;border:2px dashed #bcd8f2;border-radius:14px;padding:16px 18px;background:#fafdff}
+.check-cab{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.check-cab b{font-size:1rem;color:var(--azul-profundo);display:flex;align-items:center;gap:9px}
+.contador{font-size:.85rem;font-weight:700;color:var(--texto-suave);white-space:nowrap;background:#fff;border:1px solid var(--borde);border-radius:999px;padding:3px 11px}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:11px 4px;cursor:pointer;border-top:1px solid #e8f1f9}
+.check label:first-of-type{border-top:none}
+.check input{flex:0 0 auto;width:23px;height:23px;margin-top:1px;accent-color:var(--exito);cursor:pointer}
+.check input:checked + span{color:var(--texto-suave);text-decoration:line-through}
+
+/* ---------- SIGUIENTES PASOS ---------- */
+.pasos-final{display:grid;gap:14px;margin-top:16px}
+@media(min-width:620px){.pasos-final{grid-template-columns:1fr 1fr}}
+.paso-final{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--borde);border-radius:14px;padding:16px 18px;background:var(--superficie-suave)}
+.paso-final .ico{font-size:1.6rem;line-height:1;flex:0 0 auto}
+.paso-final b{display:block;font-size:1rem;color:var(--azul-profundo)}
+.paso-final .d{display:block;font-size:.91rem;color:var(--texto-suave);line-height:1.5}
+
+/* ---------- BOTÓN ---------- */
+.boton{display:inline-block;background:var(--azul-medio);color:#fff;text-decoration:none;padding:16px 26px;border-radius:12px;font:inherit;font-weight:700;margin-top:22px;border:none;cursor:pointer;box-shadow:0 3px 10px rgba(0,75,135,.25)}
+.boton:hover{background:var(--azul-profundo)}
+
+/* ---------- FAQ ---------- */
+.faq details{background:var(--superficie);border:1px solid var(--borde);border-radius:14px;margin-bottom:12px;box-shadow:var(--sombra);overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:18px 54px 18px 20px;font-weight:700;color:var(--azul-profundo);position:relative;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.6rem;font-weight:400;color:var(--azul);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{background:var(--superficie-suave)}
+.faq .cuerpo{padding:4px 20px 20px}
+.faq .cuerpo p{max-width:70ch}
+
+/* ---------- ENCUESTA ---------- */
+.encuesta{background:linear-gradient(140deg,#004b87,#00305c);color:#fff;border-radius:var(--radio);padding:28px}
+.encuesta .bloque-cab h2{color:#fff}
+.encuesta p{color:#d9e9f7;max-width:66ch;margin-bottom:14px}
+.asunto{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:10px 16px;font-weight:700;font-size:.96rem}
+.escala{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.escala div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:10px 15px;font-size:.9rem}
+.encuesta .clave{background:rgba(255,184,28,.18);border:1px solid rgba(255,184,28,.55);border-radius:12px;padding:15px 17px;margin-top:18px;color:#fff;font-size:.97rem;display:flex;gap:12px}
+.encuesta .clave .ico{font-size:1.4rem;line-height:1.2}
+.encuesta .clave b{color:var(--amarillo)}
+
+/* ---------- CIERRE ---------- */
+.cierre{background:var(--superficie);border:1px solid var(--borde);border-radius:var(--radio);padding:26px;box-shadow:var(--sombra)}
+footer{background:var(--azul-profundo);color:#cfe2f4;text-align:center;padding:30px 20px;font-size:.9rem}
+footer b{color:#fff;display:block;font-size:1.02rem;margin-bottom:5px}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media print{
+  @page{margin:0.4in}
+  body{background:#fff;font-size:10.5pt}
+  .utilidades,#mapa,.boton{display:none!important}
+  .hero{background:var(--azul-profundo)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .etapa,.persona,.faq details,.encuesta{break-inside:avoid;box-shadow:none}
+  .encuesta,.aviso,.resalte{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <h1 data-t="h.title">Candidate Experience Guide</h1>
+    <p class="lead" data-t="h.lead">Conoce cada etapa del proceso de selección en Eaton</p>
+    <div class="datos">
+      <span class="dato" data-t="h.d1">🧭 <b>4</b> etapas</span>
+      <span class="dato" data-t="h.d2">🗓️ ≈ <b>4 semanas</b> en promedio</span>
+      <span class="dato" data-t="h.d3">🤝 Acompañamiento en <b>cada paso</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="utilidades" aria-label="Idioma y accesos rápidos">
+  <div class="utilidades-in">
+    <div class="idioma" role="group" aria-label="Idioma / Language / Idioma">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+    <a class="chip" href="#mapa" data-t="n.mapa">🗺️ Mapa del proceso</a>
+    <a class="chip" href="#equipo" data-t="n.equipo">👥 Quién te acompaña</a>
+    <a class="chip" href="#etapa1" data-t="n.etapas">🧭 Etapas</a>
+    <a class="chip" href="#faq" data-t="n.faq">❓ Preguntas frecuentes</a>
+    <button class="chip accion" type="button" id="btn-texto" aria-pressed="false" data-t="ui.big">Aa Texto más grande</button>
+    <button class="chip accion" type="button" id="btn-print" data-t="ui.print">🖨️ Imprimir o guardar en PDF</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- MAPA -->
+  <section class="bloque" id="mapa">
+    <div class="bloque-cab"><span class="h-ico">🗺️</span><h2 data-t="m.title">Mapa del proceso</h2></div>
+    <p class="intro" data-t="m.intro">Toca la etapa en la que te encuentras para ir directo a los detalles. Los tiempos son estimados y pueden variar según la vacante.</p>
+    <div class="mapa">
+      <button class="mapa-paso" type="button" data-destino="etapa1">
+        <span class="mapa-num">1</span>
+        <span><span class="mapa-t" data-t="m.s1t">📞 Entrevista con Talent Acquisition</span><span class="mapa-d" data-t="m.s1d">1 – 2 días hábiles</span></span>
+      </button>
+      <button class="mapa-paso" type="button" data-destino="etapa2">
+        <span class="mapa-num">2</span>
+        <span><span class="mapa-t" data-t="m.s2t">👔 Entrevista con Hiring Manager</span><span class="mapa-d" data-t="m.s2d">5 – 7 días hábiles</span></span>
+      </button>
+      <button class="mapa-paso" type="button" data-destino="etapa3">
+        <span class="mapa-num">3</span>
+        <span><span class="mapa-t" data-t="m.s3t">📋 Feedback y decisión</span><span class="mapa-d" data-t="m.s3d">5 – 8 días hábiles</span></span>
+      </button>
+      <button class="mapa-paso" type="button" data-destino="etapa4">
+        <span class="mapa-num">4</span>
+        <span><span class="mapa-t" data-t="m.s4t">🎉 Siguientes pasos</span><span class="mapa-d" data-t="m.s4d">Previo a la oferta</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="bloque" id="equipo">
+    <div class="bloque-cab"><span class="h-ico">👥</span><h2 data-t="q.title">Quiénes te acompañan</h2></div>
+    <p class="intro" data-t="q.intro">Durante el proceso podrás tener contacto con distintas personas del equipo. Esto hace cada una:</p>
+    <div class="personas">
+      <div class="persona">
+        <div class="persona-cab">
+          <span class="avatar">🎯</span>
+          <span><h3>Talent Acquisition</h3><span class="rol" data-t="q.ta.rol">Tu contacto principal de inicio a fin</span></span>
+        </div>
+        <ul data-t="q.ta.list">
+          <li>Resuelve dudas sobre la vacante.</li>
+          <li>Comparte actualizaciones relevantes del proceso.</li>
+          <li>Comunica la selección del candidato o la conclusión de la vacante.</li>
+          <li>Brinda acompañamiento durante el proceso de selección.</li>
+        </ul>
+      </div>
+      <div class="persona">
+        <div class="persona-cab">
+          <span class="avatar">📅</span>
+          <span><h3>HRS</h3><span class="rol" data-t="q.hrs.rol">Coordinación y trámites</span></span>
+        </div>
+        <ul data-t="q.hrs.list">
+          <li>Coordina entrevistas y agendas.</li>
+          <li>Gestiona comunicaciones administrativas.</li>
+          <li>Apoya actividades de incorporación.</li>
+          <li>Da seguimiento a documentación cuando aplica.</li>
+        </ul>
+      </div>
+      <div class="persona">
+        <div class="persona-cab">
+          <span class="avatar">👔</span>
+          <span><h3>Hiring Manager</h3><span class="rol" data-t="q.hm.rol">El líder del área a la que aplicas</span></span>
+        </div>
+        <ul data-t="q.hm.list">
+          <li>Evalúa experiencia y competencias.</li>
+          <li>Valida alineación con el equipo.</li>
+          <li>Participa en la decisión de selección.</li>
+        </ul>
+      </div>
+      <div class="persona">
+        <div class="persona-cab">
+          <span class="avatar">🤝</span>
+          <span><h3>HRBP</h3><span class="rol" data-t="q.hrbp.rol">Soporte de Recursos Humanos</span></span>
+        </div>
+        <ul data-t="q.hrbp.list">
+          <li>Brinda soporte al proceso cuando es necesario.</li>
+          <li>Colabora con líderes y equipos de selección.</li>
+          <li>Asegura el cumplimiento de políticas y procesos.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPAS -->
+  <section class="bloque">
+    <div class="bloque-cab"><span class="h-ico">🧭</span><h2 data-t="et.title">Etapa por etapa</h2></div>
+    <p class="intro" data-t="et.intro">Qué ocurre, qué esperamos de ti y cómo llegar preparado(a).</p>
+
+    <!-- 1 -->
+    <article class="etapa" id="etapa1">
+      <div class="etapa-cab">
+        <span class="etapa-num">1</span>
+        <h3 data-t="e1.t">📞 Entrevista con Talent Acquisition</h3>
+        <span class="tiempo" data-t="e1.badge">⏱️ 1 – 2 días hábiles</span>
+      </div>
+      <p data-t="e1.p">Buscamos comprender tu trayectoria profesional, conocer tus expectativas de carrera, presentarte la posición y explicarte las diferentes etapas del proceso de selección.</p>
+
+      <h4><span class="ico">💬</span><span data-t="e1.h4">¿Cómo será la entrevista?</span></h4>
+      <ul data-t="e1.list">
+        <li>La entrevista podrá realizarse por <b>llamada telefónica</b> o <b>Microsoft Teams</b>, según lo acordado previamente durante la programación.</li>
+        <li>Procura contar con un <b>espacio tranquilo</b> y disponer del tiempo necesario para la conversación.</li>
+        <li>Esta etapa nos permitirá conocer mejor tu experiencia y resolver cualquier duda que tengas sobre la vacante o el proceso.</li>
+      </ul>
+
+      <div class="check" data-check>
+        <div class="check-cab"><b><span>✅</span><span data-t="e1.chk">Antes de esta llamada</span></b><span class="contador">0 de 4</span></div>
+        <label><input type="checkbox"><span data-t="e1.c1">Confirmé el día, la hora y el medio (llamada o Teams).</span></label>
+        <label><input type="checkbox"><span data-t="e1.c2">Tengo un lugar tranquilo y con buena señal.</span></label>
+        <label><input type="checkbox"><span data-t="e1.c3">Repasé mi experiencia y mis fechas de trabajo.</span></label>
+        <label><input type="checkbox"><span data-t="e1.c4">Preparé mis dudas sobre la vacante.</span></label>
+      </div>
+
+      <p class="nota" data-t="e1.nota">El contacto inicial suele realizarse en un plazo de 1 a 2+ días hábiles después de confirmar la entrevista.</p>
+    </article>
+
+    <!-- 2 -->
+    <article class="etapa" id="etapa2">
+      <div class="etapa-cab">
+        <span class="etapa-num">2</span>
+        <h3 data-t="e2.t">👔 Entrevista con Hiring Manager</h3>
+        <span class="tiempo" data-t="e2.badge">⏱️ 5 – 7 días hábiles</span>
+      </div>
+      <p data-t="e2.p">Es la conversación con el líder del área. Aquí se profundiza en tu experiencia técnica, tu forma de trabajar y tu alineación con el equipo.</p>
+
+      <div class="duo">
+        <div class="caja">
+          <h5><span class="ico">💻</span><span data-t="e2.virt">Si tu entrevista es virtual</span></h5>
+          <ul data-t="e2.virtlist">
+            <li>Ten a la mano el <b>enlace de la sesión</b>.</li>
+            <li>Realiza pruebas previas de cámara, audio e internet.</li>
+            <li>Utiliza vestimenta <b>casual-formal</b>.</li>
+          </ul>
+        </div>
+        <div class="caja">
+          <h5><span class="ico">🏢</span><span data-t="e2.pres">Si tu entrevista es presencial</span></h5>
+          <ul data-t="e2.preslist">
+            <li>Verifica la <b>dirección correcta</b>.</li>
+            <li>Llega con al menos <b>10 minutos</b> de anticipación.</li>
+            <li>Utiliza vestimenta <b>formal</b>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4><span class="ico">⭐</span><span data-t="e2.tips">Tips para una entrevista exitosa</span></h4>
+      <p data-t="e2.starintro">Utiliza la metodología <b>STAR</b> para estructurar tus respuestas:</p>
+      <div class="star">
+        <div class="star-item"><div class="star-l">S</div><b data-t="e2.s1t">Situación</b><span data-t="e2.s1d">Describe el contexto.</span></div>
+        <div class="star-item"><div class="star-l">T</div><b data-t="e2.s2t">Tarea</b><span data-t="e2.s2d">Explica tu responsabilidad.</span></div>
+        <div class="star-item"><div class="star-l">A</div><b data-t="e2.s3t">Acción</b><span data-t="e2.s3d">Detalla las acciones realizadas.</span></div>
+        <div class="star-item"><div class="star-l">R</div><b data-t="e2.s4t">Resultado</b><span data-t="e2.s4d">Comparte el impacto obtenido.</span></div>
+      </div>
+      <ul data-t="e2.extralist" style="margin-top:16px">
+        <li>Utiliza <b>ejemplos reales</b> de tu experiencia profesional.</li>
+        <li>Investiga sobre Eaton y revisa la <b>descripción del puesto</b>.</li>
+      </ul>
+
+      <div class="check" data-check>
+        <div class="check-cab"><b><span>✅</span><span data-t="e2.chk">Mi preparación</span></b><span class="contador">0 de 5</span></div>
+        <label><input type="checkbox"><span data-t="e2.c1">Sé si mi entrevista es virtual o presencial.</span></label>
+        <label><input type="checkbox"><span data-t="e2.c2">Probé cámara, audio e internet (o confirmé la dirección).</span></label>
+        <label><input type="checkbox"><span data-t="e2.c3">Preparé 3 ejemplos con el método STAR.</span></label>
+        <label><input type="checkbox"><span data-t="e2.c4">Volví a leer la descripción del puesto.</span></label>
+        <label><input type="checkbox"><span data-t="e2.c5">Revisé qué hace Eaton.</span></label>
+      </div>
+
+      <a class="boton" href="https://silvialabastida.github.io/Candidate-Experience/eaton-entrevista.html" target="_blank" rel="noopener" data-t="e2.btn">🚀 Prepárate para tu entrevista – Eaton</a>
+      <p class="nota" data-t="e2.nota">El tiempo estimado se considera a partir de la entrevista con Talent Acquisition y puede variar según la disponibilidad de los participantes.</p>
+    </article>
+
+    <!-- 3 -->
+    <article class="etapa" id="etapa3">
+      <div class="etapa-cab">
+        <span class="etapa-num">3</span>
+        <h3 data-t="e3.t">📋 Feedback y proceso de selección</h3>
+        <span class="tiempo" data-t="e3.badge">⏱️ 5 – 8 días hábiles (aprox.)</span>
+      </div>
+      <p data-t="e3.p">Después de cada entrevista, el Hiring Team revisará la información recopilada para evaluar la compatibilidad entre tu experiencia, la posición y el equipo.</p>
+
+      <h4><span class="ico">🧩</span><span data-t="e3.h4">Quién hace qué en esta etapa</span></h4>
+      <ul data-t="e3.list">
+        <li><b>Hiring Team:</b> proporciona la evaluación y retroalimentación del proceso de entrevistas.</li>
+        <li><b>Talent Acquisition:</b> comparte actualizaciones relevantes sobre el proceso y comunica la selección del candidato o la conclusión de la vacante.</li>
+        <li><b>HRS:</b> coordina entrevistas, actividades administrativas y procesos de incorporación cuando aplica.</li>
+      </ul>
+
+      <div class="aviso" data-t="e3.aviso">
+        <span class="t"><span>⏳</span>Los días hábiles son aproximados</span>
+        El plazo puede extenderse si el equipo contratante decide entrevistar a más candidatos o si se requieren entrevistas adicionales con integrantes del Hiring Team. <span class="resalte">Que el proceso tome más tiempo no significa que hayas quedado fuera.</span>
+      </div>
+
+      <p data-t="e3.p2">Nuestro compromiso es mantener una comunicación transparente y acompañarte durante cada etapa del proceso.</p>
+    </article>
+
+    <!-- 4 -->
+    <article class="etapa" id="etapa4">
+      <div class="etapa-cab">
+        <span class="etapa-num">4</span>
+        <h3 data-t="e4.t">🎉 Siguientes pasos</h3>
+        <span class="tiempo" data-t="e4.badge">📌 Previo a la oferta</span>
+      </div>
+      <p data-t="e4.p">Si avanzas a la etapa final, estas son las actividades que pueden solicitarse. Tu contacto de Talent Acquisition te indicará cuáles aplican en tu caso.</p>
+      <div class="pasos-final">
+        <div class="paso-final" data-omit="pt"><span class="ico">📞</span><span><b data-t="e4.ref.t">Referencias profesionales</b><span class="d" data-t="e4.ref.d">Contacto con personas con las que trabajaste antes.</span></span></div>
+        <div class="paso-final"><span class="ico">🩺</span><span><b data-t="e4.med.t">Examen médico</b><span class="d" data-t="e4.med.d">Se agenda y se te informa el lugar y la fecha.</span></span></div>
+        <div class="paso-final"><span class="ico">📄</span><span><b data-t="e4.doc.t">Solicitud de documentación</b><span class="d" data-t="e4.doc.d">Documentos personales y laborales que se te indiquen.</span></span></div>
+        <div class="paso-final"><span class="ico">✅</span><span><b data-t="e4.of.t">Oferta formal</b><span class="d" data-t="e4.of.d">Se presentan las condiciones de la posición.</span></span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ENCUESTA -->
+  <section class="bloque" id="encuesta">
+    <div class="encuesta">
+      <div class="bloque-cab"><span class="h-ico">⭐</span><h2 data-t="enc.title">Encuesta de satisfacción</h2></div>
+      <p data-t="enc.p1">En nuestro compromiso con la mejora continua, agradecemos que evalúes la experiencia que tuviste con el equipo de Talent Acquisition durante este proceso.</p>
+      <p data-t="enc.p2">La encuesta será enviada por correo electrónico con el asunto:</p>
+      <span class="asunto">📧 We Value Your Interview Experience Feedback</span>
+      <div class="clave"><span class="ico">💡</span><span data-t="enc.clave">Puede llegarte <b>en cualquier momento</b> a lo largo del proceso. Recibirla <b>no significa</b> que tu proceso haya concluido ni anticipa un resultado: es únicamente una invitación a compartir tu experiencia hasta ese momento.</span></div>
+      <div class="escala">
+        <div data-t="enc.e1">⭐⭐⭐⭐⭐ 5 estrellas = totalmente de acuerdo</div>
+        <div data-t="enc.e2">⭐ 1 estrella = totalmente en desacuerdo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bloque faq" id="faq">
+    <div class="bloque-cab"><span class="h-ico">❓</span><h2 data-t="faq.title">Preguntas frecuentes</h2></div>
+    <p class="intro" data-t="faq.intro">Toca una pregunta para ver la respuesta.</p>
+
+    <details>
+      <summary data-t="faq.q1">¿Puedo participar en otros procesos al mismo tiempo?</summary>
+      <div class="cuerpo"><p data-t="faq.a1">Sí. Sin embargo, te recomendamos enfocarte en posiciones alineadas con tus objetivos profesionales.</p></div>
+    </details>
+    <details>
+      <summary data-t="faq.q2">¿Qué pasa si no soy seleccionado(a)?</summary>
+      <div class="cuerpo"><p data-t="faq.a2">Recibirás una comunicación de cierre del proceso como agradecimiento por tu participación.</p></div>
+    </details>
+    <details>
+      <summary data-t="faq.q3">No recibí respuesta, ¿qué debo hacer?</summary>
+      <div class="cuerpo"><p data-t="faq.a3">Verifica tu correo electrónico y la carpeta de spam. Si el plazo informado ya transcurrió, puedes responder directamente al mensaje inicial.</p></div>
+    </details>
+    <details>
+      <summary data-t="faq.q4">¿No puedes ingresar a tu enlace de Teams?</summary>
+      <div class="cuerpo"><p data-t="faq.a4">Verifica que estés ingresando como invitado(a) o con la cuenta correcta. Si tu invitación no incluye un enlace de Teams, es probable que la entrevista haya sido programada por llamada telefónica y que el equipo se comunique contigo en el horario acordado. Si tienes alguna duda, contacta a tu reclutador(a).</p></div>
+    </details>
+    <details>
+      <summary data-t="faq.q5">¿Cuánto tiempo dura el proceso?</summary>
+      <div class="cuerpo"><p data-t="faq.a5">En promedio, el proceso dura alrededor de 4 semanas, aunque puede variar dependiendo de la complejidad de la posición.</p></div>
+    </details>
+    <details>
+      <summary data-t="faq.q6">¿Recibiré una encuesta de satisfacción?</summary>
+      <div class="cuerpo"><p data-t="faq.a6">Sí. Tu opinión es muy importante para ayudarnos a mejorar continuamente la experiencia de nuestros candidatos. Puede llegarte en cualquier momento del proceso y no indica que este haya terminado.</p></div>
+    </details>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="bloque">
+    <div class="cierre">
+      <div class="bloque-cab"><span class="h-ico">💬</span><h2 style="font-size:1.2rem" data-t="cierre.title">¿Te quedó alguna duda?</h2></div>
+      <p data-t="cierre.p">Responde directamente al correo o al mensaje de tu contacto de Talent Acquisition. Estamos para acompañarte durante todo el proceso.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <b>Eaton — Talent Acquisition</b>
+  <span data-t="foot.p">Guía informativa del proceso de selección. Los tiempos son estimados y pueden variar según la vacante.</span>
+</footer>
+
+<script>
+(function(){
+
+/* ============================================================
+   CONTENIDO EN OTROS IDIOMAS
+   Para editar textos en inglés o portugués, modifica solo este
+   objeto. El español vive directamente en el HTML de arriba.
+   ============================================================ */
+var DICT = {
+
+en: {
+  "_title":"Candidate Experience Guide — Eaton",
+  "_de":"of",
+  "h.title":"Candidate Experience Guide",
+  "h.lead":"Get to know every stage of the selection process at Eaton",
+  "h.d1":"🧭 <b>4</b> stages",
+  "h.d2":"🗓️ ≈ <b>4 weeks</b> on average",
+  "h.d3":"🤝 Support at <b>every step</b>",
+  "n.mapa":"🗺️ Process map",
+  "n.equipo":"👥 Who supports you",
+  "n.etapas":"🧭 Stages",
+  "n.faq":"❓ FAQ",
+  "ui.big":"Aa Larger text",
+  "ui.normal":"Aa Normal text",
+  "ui.print":"🖨️ Print or save as PDF",
+  "m.title":"Process map",
+  "m.intro":"Tap the stage you are in to jump straight to the details. Times are estimates and may vary depending on the role.",
+  "m.s1t":"📞 Interview with Talent Acquisition","m.s1d":"1 – 2 business days",
+  "m.s2t":"👔 Interview with the Hiring Manager","m.s2d":"5 – 7 business days",
+  "m.s3t":"📋 Feedback and decision","m.s3d":"5 – 8 business days",
+  "m.s4t":"🎉 Next steps","m.s4d":"Before the offer",
+  "q.title":"Who supports you",
+  "q.intro":"During the process you may be in contact with different members of the team. Here is what each one does:",
+  "q.ta.rol":"Your main point of contact from start to finish",
+  "q.ta.list":"<li>Answers your questions about the role.</li><li>Shares relevant updates on the process.</li><li>Communicates the selected candidate or the closing of the role.</li><li>Provides support throughout the selection process.</li>",
+  "q.hrs.rol":"Coordination and administration",
+  "q.hrs.list":"<li>Coordinates interviews and schedules.</li><li>Handles administrative communications.</li><li>Supports onboarding activities.</li><li>Follows up on documentation when applicable.</li>",
+  "q.hm.rol":"The leader of the team you are applying to",
+  "q.hm.list":"<li>Assesses experience and competencies.</li><li>Confirms fit with the team.</li><li>Takes part in the selection decision.</li>",
+  "q.hrbp.rol":"Human Resources support",
+  "q.hrbp.list":"<li>Supports the process when needed.</li><li>Works with leaders and selection teams.</li><li>Ensures policies and processes are followed.</li>",
+  "et.title":"Stage by stage",
+  "et.intro":"What happens, what we expect from you and how to arrive prepared.",
+  "e1.t":"📞 Interview with Talent Acquisition",
+  "e1.badge":"⏱️ 1 – 2 business days",
+  "e1.p":"We want to understand your professional background, learn about your career expectations, introduce you to the position and explain the different stages of the selection process.",
+  "e1.h4":"What will the interview be like?",
+  "e1.list":"<li>The interview may be held by <b>phone call</b> or <b>Microsoft Teams</b>, as agreed when it was scheduled.</li><li>Try to have a <b>quiet space</b> and enough time available for the conversation.</li><li>This stage allows us to get to know your experience better and answer any questions you have about the role or the process.</li>",
+  "e1.chk":"Before this call",
+  "e1.c1":"I confirmed the day, time and format (call or Teams).",
+  "e1.c2":"I have a quiet place with good signal.",
+  "e1.c3":"I reviewed my experience and my employment dates.",
+  "e1.c4":"I prepared my questions about the role.",
+  "e1.nota":"The first contact usually happens within 1 to 2+ business days after the interview is confirmed.",
+  "e2.t":"👔 Interview with the Hiring Manager",
+  "e2.badge":"⏱️ 5 – 7 business days",
+  "e2.p":"This is the conversation with the leader of the area. It goes deeper into your technical experience, the way you work and your fit with the team.",
+  "e2.virt":"If your interview is virtual",
+  "e2.virtlist":"<li>Have the <b>session link</b> ready.</li><li>Test your camera, audio and internet beforehand.</li><li>Wear <b>smart casual</b> attire.</li>",
+  "e2.pres":"If your interview is in person",
+  "e2.preslist":"<li>Confirm the <b>correct address</b>.</li><li>Arrive at least <b>10 minutes</b> early.</li><li>Wear <b>formal</b> attire.</li>",
+  "e2.tips":"Tips for a successful interview",
+  "e2.starintro":"Use the <b>STAR</b> method to structure your answers:",
+  "e2.s1t":"Situation","e2.s1d":"Describe the context.",
+  "e2.s2t":"Task","e2.s2d":"Explain your responsibility.",
+  "e2.s3t":"Action","e2.s3d":"Detail the actions you took.",
+  "e2.s4t":"Result","e2.s4d":"Share the impact achieved.",
+  "e2.extralist":"<li>Use <b>real examples</b> from your professional experience.</li><li>Research Eaton and review the <b>job description</b>.</li>",
+  "e2.chk":"My preparation",
+  "e2.c1":"I know whether my interview is virtual or in person.",
+  "e2.c2":"I tested camera, audio and internet (or confirmed the address).",
+  "e2.c3":"I prepared 3 examples using the STAR method.",
+  "e2.c4":"I re-read the job description.",
+  "e2.c5":"I looked into what Eaton does.",
+  "e2.btn":"🚀 Get ready for your interview – Eaton",
+  "e2.nota":"The estimated time is counted from the Talent Acquisition interview and may vary depending on the availability of the participants.",
+  "e3.t":"📋 Feedback and selection process",
+  "e3.badge":"⏱️ 5 – 8 business days (approx.)",
+  "e3.p":"After each interview, the Hiring Team reviews the information gathered to assess the fit between your experience, the position and the team.",
+  "e3.h4":"Who does what at this stage",
+  "e3.list":"<li><b>Hiring Team:</b> provides the evaluation and feedback from the interview process.</li><li><b>Talent Acquisition:</b> shares relevant updates about the process and communicates the selected candidate or the closing of the role.</li><li><b>HRS:</b> coordinates interviews, administrative activities and onboarding processes when applicable.</li>",
+  "e3.aviso":"<span class=\"t\"><span>⏳</span>Business days are approximate</span>The timeline may extend if the hiring team decides to interview more candidates or if additional interviews with Hiring Team members are required. <span class=\"resalte\">A longer process does not mean you are out of consideration.</span>",
+  "e3.p2":"Our commitment is to keep communication transparent and to support you at every stage of the process.",
+  "e4.t":"🎉 Next steps",
+  "e4.badge":"📌 Before the offer",
+  "e4.p":"If you move on to the final stage, these are the activities that may be requested. Your Talent Acquisition contact will let you know which ones apply in your case.",
+  "e4.ref.t":"Professional references","e4.ref.d":"Contact with people you have worked with before.",
+  "e4.med.t":"Medical exam","e4.med.d":"It is scheduled and you are informed of the place and date.",
+  "e4.doc.t":"Document request","e4.doc.d":"Personal and employment documents as indicated to you.",
+  "e4.of.t":"Formal offer","e4.of.d":"The conditions of the position are presented.",
+  "enc.title":"Satisfaction survey",
+  "enc.p1":"As part of our commitment to continuous improvement, we appreciate you rating the experience you had with the Talent Acquisition team during this process.",
+  "enc.p2":"The survey is sent by email with the subject:",
+  "enc.clave":"It may reach you <b>at any point</b> during the process. Receiving it <b>does not mean</b> that your process has ended, and it does not anticipate a result: it is simply an invitation to share your experience so far.",
+  "enc.e1":"⭐⭐⭐⭐⭐ 5 stars = strongly agree",
+  "enc.e2":"⭐ 1 star = strongly disagree",
+  "faq.title":"Frequently asked questions",
+  "faq.intro":"Tap a question to see the answer.",
+  "faq.q1":"Can I take part in other processes at the same time?",
+  "faq.a1":"Yes. However, we recommend focusing on positions aligned with your professional goals.",
+  "faq.q2":"What happens if I am not selected?",
+  "faq.a2":"You will receive a communication closing the process, thanking you for taking part.",
+  "faq.q3":"I did not get a reply, what should I do?",
+  "faq.a3":"Check your email and your spam folder. If the timeframe you were given has already passed, you can reply directly to the original message.",
+  "faq.q4":"Cannot access your Teams link?",
+  "faq.a4":"Make sure you are joining as a guest or with the correct account. If your invitation does not include a Teams link, the interview was most likely scheduled as a phone call and the team will contact you at the agreed time. If you have any questions, contact your recruiter.",
+  "faq.q5":"How long does the process take?",
+  "faq.a5":"On average, the process takes around 4 weeks, although it may vary depending on the complexity of the position.",
+  "faq.q6":"Will I receive a satisfaction survey?",
+  "faq.a6":"Yes. Your opinion is very important to help us continuously improve the experience of our candidates. It may reach you at any point in the process and does not indicate that it has ended.",
+  "cierre.title":"Still have questions?",
+  "cierre.p":"Reply directly to the email or message from your Talent Acquisition contact. We are here to support you throughout the process.",
+  "foot.p":"Informational guide to the selection process. Times are estimates and may vary depending on the role."
+},
+
+pt: {
+  "_title":"Candidate Experience Guide — Eaton",
+  "_de":"de",
+  "h.title":"Candidate Experience Guide",
+  "h.lead":"Conheça cada etapa do processo seletivo na Eaton",
+  "h.d1":"🧭 <b>4</b> etapas",
+  "h.d2":"🗓️ ≈ <b>4 semanas</b> em média",
+  "h.d3":"🤝 Acompanhamento em <b>cada passo</b>",
+  "n.mapa":"🗺️ Mapa do processo",
+  "n.equipo":"👥 Quem acompanha você",
+  "n.etapas":"🧭 Etapas",
+  "n.faq":"❓ Perguntas frequentes",
+  "ui.big":"Aa Texto maior",
+  "ui.normal":"Aa Texto normal",
+  "ui.print":"🖨️ Imprimir ou salvar em PDF",
+  "m.title":"Mapa do processo",
+  "m.intro":"Toque na etapa em que você está para ir direto aos detalhes. Os prazos são estimados e podem variar conforme a vaga.",
+  "m.s1t":"📞 Entrevista com Talent Acquisition","m.s1d":"1 – 2 dias úteis",
+  "m.s2t":"👔 Entrevista com o Hiring Manager","m.s2d":"5 – 7 dias úteis",
+  "m.s3t":"📋 Feedback e decisão","m.s3d":"5 – 8 dias úteis",
+  "m.s4t":"🎉 Próximos passos","m.s4d":"Antes da proposta",
+  "q.title":"Quem acompanha você",
+  "q.intro":"Durante o processo você poderá ter contato com diferentes pessoas do time. Veja o que cada uma faz:",
+  "q.ta.rol":"Seu contato principal do início ao fim",
+  "q.ta.list":"<li>Esclarece dúvidas sobre a vaga.</li><li>Compartilha atualizações relevantes do processo.</li><li>Comunica a seleção do candidato ou o encerramento da vaga.</li><li>Oferece acompanhamento durante o processo seletivo.</li>",
+  "q.hrs.rol":"Coordenação e trâmites",
+  "q.hrs.list":"<li>Coordena entrevistas e agendas.</li><li>Gerencia comunicações administrativas.</li><li>Apoia atividades de integração.</li><li>Acompanha a documentação quando aplicável.</li>",
+  "q.hm.rol":"O líder da área para a qual você se candidatou",
+  "q.hm.list":"<li>Avalia experiência e competências.</li><li>Valida o alinhamento com o time.</li><li>Participa da decisão de seleção.</li>",
+  "q.hrbp.rol":"Suporte de Recursos Humanos",
+  "q.hrbp.list":"<li>Dá suporte ao processo quando necessário.</li><li>Colabora com líderes e times de seleção.</li><li>Garante o cumprimento de políticas e processos.</li>",
+  "et.title":"Etapa por etapa",
+  "et.intro":"O que acontece, o que esperamos de você e como chegar preparado(a).",
+  "e1.t":"📞 Entrevista com Talent Acquisition",
+  "e1.badge":"⏱️ 1 – 2 dias úteis",
+  "e1.p":"Buscamos entender sua trajetória profissional, conhecer suas expectativas de carreira, apresentar a posição e explicar as diferentes etapas do processo seletivo.",
+  "e1.h4":"Como será a entrevista?",
+  "e1.list":"<li>A entrevista poderá ser realizada por <b>telefone</b> ou <b>Microsoft Teams</b>, conforme combinado previamente no agendamento.</li><li>Procure ter um <b>espaço tranquilo</b> e tempo suficiente para a conversa.</li><li>Esta etapa nos permite conhecer melhor sua experiência e esclarecer qualquer dúvida sobre a vaga ou o processo.</li>",
+  "e1.chk":"Antes desta ligação",
+  "e1.c1":"Confirmei o dia, o horário e o formato (ligação ou Teams).",
+  "e1.c2":"Tenho um lugar tranquilo e com bom sinal.",
+  "e1.c3":"Revisei minha experiência e as datas dos meus trabalhos.",
+  "e1.c4":"Preparei minhas dúvidas sobre a vaga.",
+  "e1.nota":"O contato inicial costuma acontecer em um prazo de 1 a 2+ dias úteis após a confirmação da entrevista.",
+  "e2.t":"👔 Entrevista com o Hiring Manager",
+  "e2.badge":"⏱️ 5 – 7 dias úteis",
+  "e2.p":"É a conversa com o líder da área. Aqui se aprofundam sua experiência técnica, sua forma de trabalhar e seu alinhamento com o time.",
+  "e2.virt":"Se sua entrevista for virtual",
+  "e2.virtlist":"<li>Tenha o <b>link da sessão</b> à mão.</li><li>Faça testes prévios de câmera, áudio e internet.</li><li>Use traje <b>casual-formal</b>.</li>",
+  "e2.pres":"Se sua entrevista for presencial",
+  "e2.preslist":"<li>Confirme o <b>endereço correto</b>.</li><li>Chegue com pelo menos <b>10 minutos</b> de antecedência.</li><li>Use traje <b>formal</b>.</li>",
+  "e2.tips":"Dicas para uma entrevista bem-sucedida",
+  "e2.starintro":"Use a metodologia <b>STAR</b> para estruturar suas respostas:",
+  "e2.s1t":"Situação","e2.s1d":"Descreva o contexto.",
+  "e2.s2t":"Tarefa","e2.s2d":"Explique sua responsabilidade.",
+  "e2.s3t":"Ação","e2.s3d":"Detalhe as ações realizadas.",
+  "e2.s4t":"Resultado","e2.s4d":"Compartilhe o impacto obtido.",
+  "e2.extralist":"<li>Use <b>exemplos reais</b> da sua experiência profissional.</li><li>Pesquise sobre a Eaton e revise a <b>descrição da vaga</b>.</li>",
+  "e2.chk":"Minha preparação",
+  "e2.c1":"Sei se minha entrevista é virtual ou presencial.",
+  "e2.c2":"Testei câmera, áudio e internet (ou confirmei o endereço).",
+  "e2.c3":"Preparei 3 exemplos com o método STAR.",
+  "e2.c4":"Reli a descrição da vaga.",
+  "e2.c5":"Pesquisei o que a Eaton faz.",
+  "e2.btn":"🚀 Prepare-se para sua entrevista – Eaton",
+  "e2.nota":"O prazo estimado é considerado a partir da entrevista com Talent Acquisition e pode variar conforme a disponibilidade dos participantes.",
+  "e3.t":"📋 Feedback e processo seletivo",
+  "e3.badge":"⏱️ 5 – 8 dias úteis (aprox.)",
+  "e3.p":"Após cada entrevista, o Hiring Team analisará as informações reunidas para avaliar a compatibilidade entre sua experiência, a posição e o time.",
+  "e3.h4":"Quem faz o quê nesta etapa",
+  "e3.list":"<li><b>Hiring Team:</b> fornece a avaliação e o feedback do processo de entrevistas.</li><li><b>Talent Acquisition:</b> compartilha atualizações relevantes sobre o processo e comunica a seleção do candidato ou o encerramento da vaga.</li><li><b>HRS:</b> coordena entrevistas, atividades administrativas e processos de integração quando aplicável.</li>",
+  "e3.aviso":"<span class=\"t\"><span>⏳</span>Os dias úteis são aproximados</span>O prazo pode se estender se o time contratante decidir entrevistar mais candidatos ou se forem necessárias entrevistas adicionais com integrantes do Hiring Team. <span class=\"resalte\">O processo levar mais tempo não significa que você foi descartado(a).</span>",
+  "e3.p2":"Nosso compromisso é manter uma comunicação transparente e acompanhar você em cada etapa do processo.",
+  "e4.t":"🎉 Próximos passos",
+  "e4.badge":"📌 Antes da proposta",
+  "e4.p":"Se você avançar para a etapa final, estas são as atividades que podem ser solicitadas. Seu contato de Talent Acquisition indicará quais se aplicam ao seu caso.",
+  "e4.med.t":"Exame médico","e4.med.d":"É agendado e você recebe o local e a data.",
+  "e4.doc.t":"Solicitação de documentação","e4.doc.d":"Documentos pessoais e profissionais conforme indicado.",
+  "e4.of.t":"Proposta formal","e4.of.d":"São apresentadas as condições da posição.",
+  "enc.title":"Pesquisa de satisfação",
+  "enc.p1":"Em nosso compromisso com a melhoria contínua, agradecemos que você avalie a experiência que teve com o time de Talent Acquisition durante este processo.",
+  "enc.p2":"A pesquisa será enviada por e-mail com o assunto:",
+  "enc.clave":"Ela pode chegar <b>a qualquer momento</b> ao longo do processo. Recebê-la <b>não significa</b> que seu processo foi concluído nem antecipa um resultado: é apenas um convite para compartilhar sua experiência até aquele momento.",
+  "enc.e1":"⭐⭐⭐⭐⭐ 5 estrelas = concordo totalmente",
+  "enc.e2":"⭐ 1 estrela = discordo totalmente",
+  "faq.title":"Perguntas frequentes",
+  "faq.intro":"Toque em uma pergunta para ver a resposta.",
+  "faq.q1":"Posso participar de outros processos ao mesmo tempo?",
+  "faq.a1":"Sim. No entanto, recomendamos que você foque em posições alinhadas com seus objetivos profissionais.",
+  "faq.q2":"O que acontece se eu não for selecionado(a)?",
+  "faq.a2":"Você receberá uma comunicação de encerramento do processo, agradecendo sua participação.",
+  "faq.q3":"Não recebi resposta, o que devo fazer?",
+  "faq.a3":"Verifique seu e-mail e a pasta de spam. Se o prazo informado já passou, você pode responder diretamente à mensagem inicial.",
+  "faq.q4":"Não consegue entrar no seu link do Teams?",
+  "faq.a4":"Verifique se está entrando como convidado(a) ou com a conta correta. Se o convite não incluir um link do Teams, é provável que a entrevista tenha sido agendada por telefone e que o time entre em contato no horário combinado. Em caso de dúvida, fale com seu(sua) recrutador(a).",
+  "faq.q5":"Quanto tempo dura o processo?",
+  "faq.a5":"Em média, o processo dura cerca de 4 semanas, podendo variar conforme a complexidade da posição.",
+  "faq.q6":"Vou receber uma pesquisa de satisfação?",
+  "faq.a6":"Sim. Sua opinião é muito importante para nos ajudar a melhorar continuamente a experiência dos nossos candidatos. Ela pode chegar a qualquer momento do processo e não indica que ele terminou.",
+  "cierre.title":"Ficou alguma dúvida?",
+  "cierre.p":"Responda diretamente ao e-mail ou à mensagem do seu contato de Talent Acquisition. Estamos aqui para acompanhar você durante todo o processo.",
+  "foot.p":"Guia informativo do processo seletivo. Os prazos são estimados e podem variar conforme a vaga."
+}
+
+};
+
+/* ---------- Base en español, tomada del propio HTML ---------- */
+var BASE = {"_title":document.title,"_de":"de"};
+document.querySelectorAll('[data-t]').forEach(function(el){
+  if(BASE[el.dataset.t] === undefined) BASE[el.dataset.t] = el.innerHTML;
+});
+BASE["ui.big"] = "Aa Texto más grande";
+BASE["ui.normal"] = "Aa Texto normal";
+
+var idioma = 'es';
+
+function txt(clave){
+  if(idioma === 'es') return BASE[clave];
+  var d = DICT[idioma] || {};
+  return (d[clave] !== undefined) ? d[clave] : BASE[clave];
+}
+
+function actualizarContadores(){
+  document.querySelectorAll('[data-check]').forEach(function(bloque){
+    var cajas = bloque.querySelectorAll('input[type=checkbox]');
+    var salida = bloque.querySelector('.contador');
+    var n = 0;
+    cajas.forEach(function(c){ if(c.checked) n++; });
+    salida.textContent = n + ' ' + txt('_de') + ' ' + cajas.length;
+    salida.style.color = (n === cajas.length) ? 'var(--exito)' : 'var(--texto-suave)';
+  });
+}
+
+function aplicarIdioma(l){
+  idioma = (l === 'en' || l === 'pt') ? l : 'es';
+  document.documentElement.lang = (idioma === 'pt') ? 'pt-BR' : idioma;
+  document.title = txt('_title');
+
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    if(el.id === 'btn-texto') return;
+    el.innerHTML = txt(el.dataset.t);
+  });
+
+  // Elementos que no aplican en ciertos países (ej. referencias en Brasil)
+  document.querySelectorAll('[data-omit]').forEach(function(el){
+    el.style.display = (el.dataset.omit.split(',').indexOf(idioma) > -1) ? 'none' : '';
+  });
+
+  // Botón de tamaño de texto según su estado actual
+  var grande = document.body.classList.contains('grande');
+  document.getElementById('btn-texto').innerHTML = grande ? txt('ui.normal') : txt('ui.big');
+
+  document.querySelectorAll('.idioma button').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.lang === idioma ? 'true' : 'false');
+  });
+
+  actualizarContadores();
+
+  try{
+    var u = new URL(window.location.href);
+    if(idioma === 'es'){ u.searchParams.delete('lang'); } else { u.searchParams.set('lang', idioma); }
+    window.history.replaceState({}, '', u);
+  }catch(e){}
+}
+
+document.querySelectorAll('.idioma button').forEach(function(b){
+  b.addEventListener('click', function(){ aplicarIdioma(b.dataset.lang); });
+});
+
+/* ---------- Checklists ---------- */
+document.querySelectorAll('[data-check] input[type=checkbox]').forEach(function(c){
+  c.addEventListener('change', actualizarContadores);
+});
+
+/* ---------- Mapa del proceso ---------- */
+var pasos = document.querySelectorAll('.mapa-paso');
+pasos.forEach(function(p){
+  p.addEventListener('click', function(){
+    pasos.forEach(function(o){ o.classList.remove('activo'); });
+    p.classList.add('activo');
+    document.querySelectorAll('.etapa').forEach(function(e){ e.classList.remove('marcada'); });
+    var destino = document.getElementById(p.dataset.destino);
+    if(destino){
+      destino.classList.add('marcada');
+      destino.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+
+/* ---------- Tamaño de texto ---------- */
+var btnTexto = document.getElementById('btn-texto');
+btnTexto.addEventListener('click', function(){
+  var activo = document.body.classList.toggle('grande');
+  btnTexto.setAttribute('aria-pressed', activo ? 'true' : 'false');
+  btnTexto.innerHTML = activo ? txt('ui.normal') : txt('ui.big');
+});
+
+/* ---------- Imprimir ---------- */
+document.getElementById('btn-print').addEventListener('click', function(){
+  document.querySelectorAll('.faq details').forEach(function(d){ d.open = true; });
+  window.print();
+});
+
+/* ---------- Idioma inicial: ?lang=en / ?lang=pt ---------- */
+var inicial = 'es';
+try{
+  var q = new URL(window.location.href).searchParams.get('lang');
+  if(q){ inicial = q.toLowerCase(); }
+}catch(e){}
+aplicarIdioma(inicial);
+
+})();
+</script>
+</body>
+</html>
